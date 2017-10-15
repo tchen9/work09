@@ -16,14 +16,14 @@ c.execute("CREATE TABLE courses (code TEXT, mark INTEGER, id INTEGER);") #course
 with open('courses.csv') as csvfile:
     reader = csv.DictReader(csvfile)
     for row in reader:
-        c.execute('INSERT INTO courses VALUES("' + "row['code']" + '", ' + "row['mark']" + ", " + "row['id']" + "); ")
+        c.execute('INSERT INTO courses VALUES("' + 'row['code']' + '", ' + 'row['mark']' + ", " + 'row['id']' + "); ")
 
 #added values from peeps
 c.execute("CREATE TABLE peeps (name TEXT, age INTEGER, id INTEGER)")
 with open('peeps.csv') as csvfile:
     reader = csv.DictReader(csvfile)
     for row in reader:
-        c.execute('INSERT INTO peeps VALUES("' + "row['name']" + '", ' + "row['age']" + ", " + "row['id']" + ');')
+        c.execute('INSERT INTO peeps VALUES("' + 'row['name']' + '", ' + 'row['age']' + ", " + 'row['id']' + ');')
 
                   
 
