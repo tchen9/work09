@@ -11,6 +11,8 @@ c = db.cursor()    #facilitate db ops
 #INSERT YOUR POPULATE CODE IN THIS ZONE
 
 #adds values from courses
+c.execute("drop table courses")
+c.execute("drop table peeps")
 
 c.execute("CREATE TABLE courses (code TEXT, mark INTEGER, id INTEGER);") #course table
 with open('courses.csv') as csvfile:
@@ -26,9 +28,7 @@ with open('peeps.csv') as csvfile:
         c.execute('INSERT INTO peeps VALUES("' + str(row['name']) + '", ' + str(row['age']) + ", " + str(row['id']) + ');')
 
                   
-
-command = ""          #put SQL statement in this string
-c.execute(command)    #run SQL statement
+#print (c.execute("SELECT * FROM courses"))  #run SQL statement
 
 #==========================================================
 db.commit() #save changes
